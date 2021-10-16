@@ -2,10 +2,9 @@ library(copent)
 library(lattice)
 
 load("lab1.rdata")
-n = dim(csv1)[2]
-
+n = dim(csv1)[2] # number of variables
 mxce1 = matrix(0, n, n)
-len = 1000
+len = 1000  # number of samples
 for (i in 1:n){
   for(j in i:n){
     data1 = csv1[1:len,c(i,j)]
@@ -17,5 +16,4 @@ for (i in 1:n){
     print(str1)
   }
 }
-
 levelplot(mxce1, xlab = '', ylab = '')
